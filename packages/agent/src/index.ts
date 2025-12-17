@@ -993,3 +993,5 @@ export class BasicAgent extends BuiltInAgent {
     console.warn("BasicAgent is deprecated, use BuiltInAgent instead");
   }
 }
+
+export type BasicAgentConfiguration = BuiltInAgentConfiguration;
