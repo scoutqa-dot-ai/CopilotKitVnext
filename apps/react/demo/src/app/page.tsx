@@ -40,20 +40,7 @@ export default function Home() {
   });
 
   return (
-    <CopilotKitProvider
-      runtimeUrl="/api/copilotkit"
-      renderToolCalls={[wildcardRenderer]}
-      showDevConsole="auto"
-      renderActivityMessages={[
-        {
-          activityType: "a2ui-surface",
-          content: z.any(),
-          render: ({ content }) => {
-            return <pre>{JSON.stringify(content, null, 2)}</pre>;
-          },
-        },
-      ]}
-    >
+    <CopilotKitProvider runtimeUrl="/api/copilotkit" renderToolCalls={[wildcardRenderer]} showDevConsole="auto">
       <div style={{ height: "100vh", margin: 0, padding: 0, overflow: "hidden" }}>
         <Chat />
       </div>

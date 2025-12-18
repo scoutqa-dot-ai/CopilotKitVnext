@@ -976,7 +976,11 @@ export class BuiltInAgent extends AbstractAgent {
   }
 
   clone() {
-    return new BuiltInAgent(this.config);
+    const cloned = new BuiltInAgent(this.config);
+    // Copy middlewares from parent class
+    // @ts-expect-error - accessing protected property from parent
+    cloned.middlewares = [...this.middlewares];
+    return cloned;
   }
 
   abortRun(): void {
